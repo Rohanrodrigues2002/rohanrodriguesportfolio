@@ -168,19 +168,25 @@ const AnimatedRoutes = () => {
   );
 };
 
+const AppContent = () => {
+  return (
+    <div className="relative min-h-screen">
+      <CustomCursor />
+      <Navigation />
+      <main className="pt-20">
+        <AnimatedRoutes />
+      </main>
+      <Toaster />
+      <Sonner />
+    </div>
+  );
+};
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <BrowserRouter>
-        <div className="relative min-h-screen">
-          <CustomCursor />
-          <Navigation />
-          <main className="pt-20">
-            <AnimatedRoutes />
-          </main>
-          <Toaster />
-          <Sonner />
-        </div>
+        <AppContent />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
