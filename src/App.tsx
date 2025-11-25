@@ -13,7 +13,6 @@ import Resume from "./pages/Resume";
 import Projects from "./pages/Projects";
 import Skills from "./pages/Skills";
 import Contact from "./pages/Contact";
-import Articles from "./pages/Articles";
 import CodingProfiles from "./pages/CodingProfiles";
 import NotFound from "./pages/NotFound";
 
@@ -131,20 +130,6 @@ const AnimatedRoutes = () => {
               transition={pageTransition}
             >
               <Contact />
-            </motion.div>
-          }
-        />
-        <Route
-          path="/articles"
-          element={
-            <motion.div
-              variants={pageVariants}
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              transition={pageTransition}
-            >
-              <Articles />
             </motion.div>
           }
         />
