@@ -31,7 +31,7 @@ const About = () => {
 
             <motion.div variants={staggerItem} className="space-y-6 text-center max-w-3xl">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I'm a passionate Java Developer with one year of hands-on experience building efficient, scalable applications. I work with Java, Spring Boot, REST APIs, MySQL, and Git, focusing on backend development, API integration, and performance improvements. I'm driven by solving meaningful problems and eager to contribute to teams that value clean architecture and continuous learning.
+                I'm a passionate Java Developer with one year of hands-on experience building efficient, scalable, and user-focused applications. I enjoy transforming complex problems into clean, maintainable code and continuously improving my skill set through real-world projects and learning. During my experience, I've worked with Java, Spring Boot, REST APIs, MySQL, and Git, contributing to backend development, debugging, API integration, and performance improvements. I take pride in writing readable, well-structured code and collaborating closely with teams to deliver high-quality features on time. What drives me is the opportunity to grow, solve meaningful problems, and contribute to a team that values innovation, clean architecture, and continuous learning. I'm eager to join an environment where I can add value, take ownership, and further strengthen my expertise in backend development and Java technologies.
               </p>
 
               <div className="flex flex-wrap justify-center gap-3 pt-4">
