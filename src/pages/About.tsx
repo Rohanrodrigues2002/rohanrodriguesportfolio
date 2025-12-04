@@ -3,8 +3,23 @@ import { fadeInUp } from "@/animations/fadeAnimations";
 import { staggerContainer, staggerItem } from "@/animations/staggerAnimations";
 import ParticleBackground from "@/components/ParticleBackground";
 import ThreeIcon from "@/three/IconScene";
+import { Code, Database, Server, Zap } from "lucide-react";
 
 const About = () => {
+  const highlights = [
+    { label: "Year Experience", value: "1+" },
+    { label: "Projects Completed", value: "10+" },
+    { label: "Technologies", value: "6+" },
+    { label: "Lines of Code", value: "50K+" },
+  ];
+
+  const whatIDo = [
+    { icon: Server, title: "Backend Development", desc: "Building robust server-side applications with Java and Spring Boot" },
+    { icon: Database, title: "Database Design", desc: "Designing efficient MySQL schemas and optimizing queries" },
+    { icon: Code, title: "API Development", desc: "Creating RESTful APIs with clean architecture and documentation" },
+    { icon: Zap, title: "Performance Optimization", desc: "Identifying bottlenecks and improving application performance" },
+  ];
+
   return (
     <section className="relative min-h-screen py-20 overflow-hidden">
       <ParticleBackground />
@@ -46,6 +61,49 @@ const About = () => {
                   >
                     <span className="text-primary">▹</span>
                     <span>{tech}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Highlights Section */}
+            <motion.div 
+              variants={staggerItem}
+              className="grid grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-4xl mt-8"
+            >
+              {highlights.map((item, index) => (
+                <motion.div
+                  key={item.label}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                  className="text-center p-6 rounded-xl border border-primary/20 bg-card/50 backdrop-blur-sm"
+                >
+                  <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">{item.value}</div>
+                  <div className="text-sm text-muted-foreground">{item.label}</div>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            {/* What I Do Section */}
+            <motion.div variants={staggerItem} className="w-full max-w-5xl mt-12">
+              <h3 className="text-2xl md:text-3xl font-bold text-center mb-8">
+                <span className="gradient-text">What I Do</span>
+              </h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                {whatIDo.map((item, index) => (
+                  <motion.div
+                    key={item.title}
+                    initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.15, duration: 0.5 }}
+                    className="p-6 rounded-xl border border-primary/20 bg-card/50 backdrop-blur-sm hover:border-primary/50 transition-colors group"
+                  >
+                    <item.icon className="w-10 h-10 text-primary mb-4 group-hover:scale-110 transition-transform" />
+                    <h4 className="text-lg font-semibold text-foreground mb-2">{item.title}</h4>
+                    <p className="text-muted-foreground text-sm">{item.desc}</p>
                   </motion.div>
                 ))}
               </div>
