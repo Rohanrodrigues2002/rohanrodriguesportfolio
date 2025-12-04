@@ -39,8 +39,8 @@ const About = () => {
             <span className="gradient-text">About Me</span>
           </motion.h2>
 
-          <div className="flex flex-col items-center gap-12">
-            <motion.div variants={staggerItem} className="w-48 h-48">
+          <div className="flex flex-col items-center gap-6">
+            <motion.div variants={staggerItem} className="w-32 h-32">
               <ThreeIcon icon="react" speed={0.5} color="#00ffff" />
             </motion.div>
 
