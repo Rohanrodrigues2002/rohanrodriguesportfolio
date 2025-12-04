@@ -31,23 +31,19 @@ const About = () => {
 
             <motion.div variants={staggerItem} className="space-y-6">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Hello! I'm John, a full-stack developer passionate about creating things that live on the internet. 
-                My interest in web development started back in 2018 when I decided to try building my first website — 
-                turns out hacking together a custom WordPress theme taught me a lot about HTML & CSS!
+                I'm a passionate Java Developer with one year of hands-on experience building efficient, scalable, and user-focused applications. I enjoy transforming complex problems into clean, maintainable code and continuously improving my skill set through real-world projects and learning.
               </p>
 
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Fast-forward to today, and I've had the privilege of working at various companies, building products 
-                for startups, and contributing to open-source projects. My main focus these days is building accessible, 
-                inclusive products and digital experiences with cutting-edge technologies.
+                During my experience, I've worked with Java, Spring Boot, REST APIs, MySQL, and Git, contributing to backend development, debugging, API integration, and performance improvements. I take pride in writing readable, well-structured code and collaborating closely with teams to deliver high-quality features on time.
               </p>
 
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Here are a few technologies I've been working with recently:
+                What drives me is the opportunity to grow, solve meaningful problems, and contribute to a team that values innovation, clean architecture, and continuous learning. I'm eager to join an environment where I can add value, take ownership, and further strengthen my expertise in backend development and Java technologies.
               </p>
 
               <div className="grid grid-cols-2 gap-3">
-                {["JavaScript (ES6+)", "React", "Node.js", "TypeScript", "Python", "MongoDB"].map((tech, index) => (
+                {["Java", "Spring Boot", "REST APIs", "MySQL", "Git", "Backend Development"].map((tech, index) => (
                   <motion.div
                     key={tech}
                     initial={{ opacity: 0, x: -20 }}
