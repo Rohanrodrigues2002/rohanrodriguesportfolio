@@ -31,7 +31,7 @@ const Hero = () => {
             variants={staggerItem}
             className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4"
           >
-            <span className="gradient-text">John Doe</span>
+            <span className="gradient-text">Rohan Rodrigues J</span>
           </motion.h1>
 
           <motion.h2
