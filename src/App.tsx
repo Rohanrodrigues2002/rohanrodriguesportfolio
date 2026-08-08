@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -15,23 +16,23 @@ import Skills from "./pages/Skills";
 import Contact from "./pages/Contact";
 import CodingProfiles from "./pages/CodingProfiles";
 import NotFound from "./pages/NotFound";
-
+ 
 const queryClient = new QueryClient();
-
+ 
 const pageVariants = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
   exit: { opacity: 0, y: -20 }
 };
-
+ 
 const pageTransition = {
   type: "tween" as const,
   duration: 0.5
 };
-
+ 
 const AnimatedRoutes = () => {
   const location = useLocation();
-
+ 
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
@@ -152,7 +153,7 @@ const AnimatedRoutes = () => {
     </AnimatePresence>
   );
 };
-
+ 
 const AppContent = () => {
   return (
     <div className="relative min-h-screen">
@@ -166,15 +167,15 @@ const AppContent = () => {
     </div>
   );
 };
-
+ 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/rohanrodriguesportfolio">
         <AppContent />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
 );
-
+ 
 export default App;
