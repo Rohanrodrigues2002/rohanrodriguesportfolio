@@ -6,7 +6,7 @@ import { Briefcase, GraduationCap } from "lucide-react";
 const experience = [
   {
     title: "Java Backend Developer",
-    company: "Corpfield Technology Solutions",
+    company: "Corpfield",
     location: "Nagercoil, Tamil Nadu",
     period: "Aug 2025 – Present",
     description:
