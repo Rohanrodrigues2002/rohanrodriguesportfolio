@@ -2,8 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { staggerContainer, staggerItem } from "@/animations/staggerAnimations";
 import ParticleBackground from "@/components/ParticleBackground";
-import AnimatedButton from "@/components/AnimatedButton";
-import { Mail, MapPin, Phone, Send } from "lucide-react";
+import { Mail, MapPin, Phone, Send, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
@@ -68,7 +67,6 @@ const Contact = () => {
       ...prev,
       [e.target.name]: e.target.value
     }));
-    // Clear error when user starts typing
     if (errors[e.target.name]) {
       setErrors(prev => ({ ...prev, [e.target.name]: "" }));
     }
@@ -112,7 +110,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">Email</p>
-                      <p className="font-semibold">contact@example.com</p>
+                      <p className="font-semibold">rohanrodrigues2002@gmail.com</p>
                     </div>
                   </div>
 
@@ -122,7 +120,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">Phone</p>
-                      <p className="font-semibold">+1 (555) 123-4567</p>
+                      <p className="font-semibold">+91 89257175587</p>
                     </div>
                   </div>
 
@@ -132,7 +130,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">Location</p>
-                      <p className="font-semibold">San Francisco, CA</p>
+                      <p className="font-semibold">Nagercoil, Tamil Nadu, India</p>
                     </div>
                   </div>
                 </div>
@@ -210,14 +208,25 @@ const Contact = () => {
                   )}
                 </div>
 
-                <AnimatedButton
+                <motion.button
                   type="submit"
-                  variant="primary"
-                  className="w-full"
                   disabled={isSubmitting}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="relative w-full py-3 px-6 rounded-lg font-semibold text-white bg-gradient-to-r from-neon-cyan to-neon-blue shadow-lg hover:shadow-neon-cyan/50 transition-shadow duration-300 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  {isSubmitting ? "Sending..." : "Send Message"} <Send size={18} className="ml-2" />
-                </AnimatedButton>
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="animate-spin" size={20} />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      Send Message
+                      <Send size={18} />
+                    </>
+                  )}
+                </motion.button>
               </form>
             </motion.div>
           </div>

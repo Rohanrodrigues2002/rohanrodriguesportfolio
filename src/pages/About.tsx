@@ -22,8 +22,15 @@ const About = () => {
 
   return (
     <section className="relative min-h-screen py-20 overflow-hidden">
+      {/* Background particles */}
       <ParticleBackground />
-      
+
+      {/* 🔽 Background 3D Cube – now behind everything */}
+      <div className="fixed inset-0 z-0 pointer-events-none flex items-center justify-center opacity-20">
+        <ThreeIcon icon="react" speed={0.5} color="#00ffff" scale={4} />
+      </div>
+
+      {/* Main content – sits above with higher z-index */}
       <div className="container mx-auto px-4 z-10 relative">
         <motion.div
           variants={staggerContainer}
@@ -40,9 +47,14 @@ const About = () => {
           </motion.h2>
 
           <div className="flex flex-col items-center gap-6">
-            <motion.div variants={staggerItem} className="w-32 h-32">
+            {/* 
+              🔹 If you still want a small cube icon inside the text flow,
+              you can keep this, but it will be on top of the background one.
+              To avoid duplication, you may remove this line and rely only on the background cube.
+            */}
+            {/* <motion.div variants={staggerItem} className="w-32 h-32">
               <ThreeIcon icon="react" speed={0.5} color="#00ffff" />
-            </motion.div>
+            </motion.div> */}
 
             <motion.div variants={staggerItem} className="space-y-6 text-center max-w-3xl">
               <p className="text-lg text-muted-foreground leading-relaxed">

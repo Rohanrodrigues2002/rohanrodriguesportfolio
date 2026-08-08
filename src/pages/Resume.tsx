@@ -1,49 +1,50 @@
 import { motion } from "framer-motion";
 import { staggerContainer, staggerItem } from "@/animations/staggerAnimations";
 import ParticleBackground from "@/components/ParticleBackground";
-import AnimatedButton from "@/components/AnimatedButton";
-import { Download, Briefcase, GraduationCap } from "lucide-react";
+import { Briefcase, GraduationCap } from "lucide-react";
 
 const experience = [
   {
-    title: "Senior Full Stack Developer",
-    company: "Tech Corp",
-    period: "2022 - Present",
-    description: "Leading development of scalable web applications using React, Node.js, and cloud technologies."
+    title: "Java Backend Developer",
+    company: "Corpfield Technology Solutions",
+    location: "Nagercoil, Tamil Nadu",
+    period: "Aug 2025 – Present",
+    description:
+      "Design and maintain RESTful services and modular Spring Boot components for business applications, applying service-layer and MVC architecture. Implement secure authentication and role-based access control using Spring Security and JWT. Design persistence logic and efficient queries using JPA/Hibernate with PostgreSQL and MySQL, while integrating MongoDB for schema-flexible services. Build reusable React components, integrate backend APIs through Axios and manage state across responsive, data-driven interfaces. Designed CSV ingestion workflows with validation and exception handling, automated scheduled email notifications, and manage code via Git/GitHub with Agile delivery."
   },
   {
-    title: "Full Stack Developer",
-    company: "StartUp Inc",
-    period: "2020 - 2022",
-    description: "Built and maintained multiple client projects, focusing on performance optimization and user experience."
+    title: "Python Software Developer",
+    company: "HiTech Solutions",
+    location: "Nagercoil, Tamil Nadu",
+    period: "Oct 2024 – Aug 2025",
+    description:
+      "Developed 20+ Python applications across web development, data processing, machine learning and IoT. Built full-stack Flask applications with MySQL and PostgreSQL, designing REST APIs for frontend and third-party integrations. Used Pandas and NumPy for data cleaning and transformation, and Scikit-learn/TensorFlow for classification and prediction solutions. Mentored junior developers on Python practices, project structure and troubleshooting."
   },
   {
-    title: "Junior Developer",
-    company: "Web Agency",
-    period: "2018 - 2020",
-    description: "Developed responsive websites and learned modern web development practices."
+    title: "Machine Learning in IoT Intern",
+    company: "Srishti Innovative Computer Systems Pvt. Ltd.",
+    location: "Trivandrum, Kerala",
+    period: "Jul 2022 – Aug 2022",
+    description:
+      "Developed deep-learning and IoT prototypes using Python, TensorFlow, Scikit-learn, sensors and Raspberry Pi. Applied image and sensor-data processing for classification, object detection and embedded real-time inference."
   }
 ];
 
 const education = [
   {
-    degree: "Bachelor of Science in Computer Science",
-    school: "University Name",
-    period: "2014 - 2018",
-    description: "Graduated with honors. Focused on software engineering and web technologies."
+    degree: "B.E. in Electronics and Communication Engineering",
+    school: "Ponjesly College of Engineering",
+    location: "Tamil Nadu",
+    period: "2020 – 2024",
+    description: "Graduated with a Bachelor's degree in Electronics and Communication Engineering."
   }
 ];
 
 const Resume = () => {
-  const handleDownload = () => {
-    // In a real app, this would download the actual resume file
-    alert("Resume download would start here!");
-  };
-
   return (
     <section className="relative min-h-screen py-20 overflow-hidden">
       <ParticleBackground />
-      
+
       <div className="container mx-auto px-4 z-10 relative">
         <motion.div
           variants={staggerContainer}
@@ -56,22 +57,15 @@ const Resume = () => {
             variants={staggerItem}
             className="text-4xl md:text-6xl font-bold mb-4 text-center"
           >
-            <span className="gradient-text">Resume</span>
+            <span className="gradient-text">Qualification & Experience</span>
           </motion.h2>
 
           <motion.p
             variants={staggerItem}
-            className="text-center text-muted-foreground mb-12 text-lg"
+            className="text-center text-muted-foreground mb-16 text-lg"
           >
             My professional journey
           </motion.p>
-
-          <motion.div variants={staggerItem} className="flex justify-center mb-16">
-            <AnimatedButton onClick={handleDownload} variant="primary">
-              <Download size={20} className="mr-2" />
-              Download Resume
-            </AnimatedButton>
-          </motion.div>
 
           <div className="space-y-12">
             <motion.div variants={staggerItem}>
@@ -85,7 +79,7 @@ const Resume = () => {
               <div className="space-y-6">
                 {experience.map((job, index) => (
                   <motion.div
-                    key={job.title}
+                    key={`${job.title}-${job.company}`}
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
@@ -96,7 +90,8 @@ const Resume = () => {
                       <h4 className="text-xl font-bold">{job.title}</h4>
                       <span className="text-primary font-mono text-sm">{job.period}</span>
                     </div>
-                    <p className="text-primary/80 mb-3">{job.company}</p>
+                    <p className="text-primary/80 mb-1">{job.company}</p>
+                    <p className="text-muted-foreground text-sm mb-3">{job.location}</p>
                     <p className="text-muted-foreground">{job.description}</p>
                   </motion.div>
                 ))}
@@ -125,7 +120,8 @@ const Resume = () => {
                       <h4 className="text-xl font-bold">{edu.degree}</h4>
                       <span className="text-secondary font-mono text-sm">{edu.period}</span>
                     </div>
-                    <p className="text-secondary/80 mb-3">{edu.school}</p>
+                    <p className="text-secondary/80 mb-1">{edu.school}</p>
+                    <p className="text-muted-foreground text-sm mb-3">{edu.location}</p>
                     <p className="text-muted-foreground">{edu.description}</p>
                   </motion.div>
                 ))}

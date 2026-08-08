@@ -6,45 +6,31 @@ import { ExternalLink } from "lucide-react";
 const profiles = [
   {
     platform: "GitHub",
-    username: "@johndoe",
-    stats: "200+ repositories",
-    link: "https://github.com",
+    username: "@Rohanrodrigues2002",
+    stats: "repositories",
+    link: "https://github.com/Rohanrodrigues2002",
     gradient: "from-neon-cyan to-neon-blue"
   },
   {
     platform: "LeetCode",
-    username: "johndoe",
-    stats: "500+ problems solved",
+    username: "Rohan_Rodrigues1",
+    stats: "problems solved",
     link: "https://leetcode.com",
     gradient: "from-neon-violet to-neon-pink"
   },
   {
-    platform: "CodePen",
-    username: "johndoe",
-    stats: "100+ pens",
-    link: "https://codepen.io",
-    gradient: "from-neon-pink to-neon-cyan"
-  },
-  {
     platform: "Stack Overflow",
-    username: "johndoe",
-    stats: "5k+ reputation",
+    username: "Rohan Rodrigues",
+    stats: "reputation",
     link: "https://stackoverflow.com",
     gradient: "from-neon-blue to-neon-violet"
   },
   {
     platform: "HackerRank",
-    username: "johndoe",
+    username: "Rohan Rodrigues",
     stats: "5 star rating",
-    link: "https://hackerrank.com",
+    link: "https://www.hackerrank.com",
     gradient: "from-neon-cyan to-neon-pink"
-  },
-  {
-    platform: "Dev.to",
-    username: "@johndoe",
-    stats: "50+ articles",
-    link: "https://dev.to",
-    gradient: "from-neon-violet to-neon-blue"
   }
 ];
 
@@ -75,7 +61,8 @@ const CodingProfiles = () => {
             Find me across the web
           </motion.p>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Grid updated: 1 column on mobile, 2 columns on md+ */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
             {profiles.map((profile, index) => (
               <motion.a
                 key={profile.platform}
@@ -85,7 +72,7 @@ const CodingProfiles = () => {
                 variants={staggerItem}
                 whileHover={{ scale: 1.05, y: -5 }}
                 whileTap={{ scale: 0.98 }}
-                className="glass rounded-2xl p-6 group relative overflow-hidden"
+                className="glass rounded-2xl p-6 group relative overflow-hidden flex flex-col"
               >
                 <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${profile.gradient}`} />
                 
@@ -107,7 +94,7 @@ const CodingProfiles = () => {
                   </motion.div>
                 </div>
 
-                <p className="text-muted-foreground text-sm">
+                <p className="text-muted-foreground text-sm mt-auto">
                   {profile.stats}
                 </p>
 

@@ -6,36 +6,58 @@ import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    description: "A full-stack e-commerce solution with React, Node.js, and MongoDB. Features include user authentication, product management, shopping cart, and payment integration.",
-    tech: ["React", "Node.js", "MongoDB", "Stripe"],
-    github: "https://github.com",
-    demo: "https://demo.com",
+    title: "CSV Import to Database (Multiple Entities)",
+    description:
+      "Developed a backend module using Spring Boot to parse CSV files and insert records into multiple related entities with validation and mapping. Handled complex relational data efficiently.",
+    tech: ["Java", "Spring Boot", "MySQL", "JPA/Hibernate"],
+    github: "https://github.com/Rohanrodrigues2002/csv_import_db-for-multiple-entities-using-springboot",
+    demo: "#",
     gradient: "from-neon-cyan to-neon-blue"
   },
   {
-    title: "Task Management App",
-    description: "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-    tech: ["React", "Firebase", "Tailwind CSS"],
-    github: "https://github.com",
-    demo: "https://demo.com",
+    title: "Reminder Mail for Active Users",
+    description:
+      "Built an automated reminder system using Spring Boot scheduling and email integration. Notifies active users based on their activity status, improving user engagement.",
+    tech: ["Java", "Spring Boot", "Spring Mail", "Scheduling"],
+    github: "https://github.com/Rohanrodrigues2002/Remainder-Mail-For-Active-users-Using-SpringBoot",
+    demo: "#",
     gradient: "from-neon-violet to-neon-pink"
   },
   {
-    title: "Weather Dashboard",
-    description: "Real-time weather application with geolocation support, 7-day forecast, and interactive maps using modern APIs.",
-    tech: ["React", "OpenWeather API", "Chart.js"],
-    github: "https://github.com",
-    demo: "https://demo.com",
+    title: "Spring Boot CRUD with MongoDB",
+    description:
+      "Implemented full RESTful CRUD operations with MongoDB integration using Spring Boot. Designed a scalable data layer for NoSQL storage and efficient querying.",
+    tech: ["Java", "Spring Boot", "MongoDB", "REST APIs"],
+    github: "https://github.com/Rohanrodrigues2002/Spring-Boot-CRUD-with-MongoDB",
+    demo: "#",
     gradient: "from-neon-pink to-neon-cyan"
   },
   {
-    title: "Social Media Analytics",
-    description: "Analytics dashboard for social media metrics with data visualization, insights generation, and report export functionality.",
-    tech: ["Python", "Flask", "React", "D3.js"],
-    github: "https://github.com",
-    demo: "https://demo.com",
+    title: "Seizure Detection with Raspberry Pi",
+    description:
+      "Developed a deep learning‑based medical image analysis system and deployed it on Raspberry Pi for edge inference. Used TensorFlow/Keras for model training and classification.",
+    tech: ["Python", "TensorFlow", "Raspberry Pi", "Deep Learning"],
+    github: "https://github.com/Rohanrodrigues2002/Seizure-Detection_ai",
+    demo: "#",
     gradient: "from-neon-blue to-neon-violet"
+  },
+  {
+    title: "Task Management System",
+    description:
+      "A full-featured task management application with user authentication, project boards, and real-time updates. Built with FastAPI for high-performance backend APIs and React for a dynamic frontend.",
+    tech: ["FastAPI", "React", "PostgreSQL", "JWT","Pydantic", "Alembic", "SQLAlchemy"],
+    github: "https://github.com/Rohanrodrigues2002/TODO_-APP_USING_FASTAPI",
+    demo: "#",
+    gradient: "from-neon-green to-neon-teal" // adjust gradient if needed
+  },
+  {
+    title: "E-Commerce Website",
+    description:
+      "A full-stack e-commerce platform with product catalog, shopping cart, order management, and payment integration. Built with Spring Boot for robust backend services and React for interactive UI.",
+    tech: ["Spring Boot", "React", "PostgreSQL","JWT","Spring Security","JPA/Hibernate" ,"Stripe","Lombok"],
+    github: "https://github.com/Rohanrodrigues2002/E-commerce-website-using-SpringBoot-And-React",
+    demo: "#",
+    gradient: "from-neon-orange to-neon-red" // adjust gradient if needed
   }
 ];
 
@@ -63,7 +85,7 @@ const Projects = () => {
             variants={staggerItem}
             className="text-center text-muted-foreground mb-16 text-lg"
           >
-            Some things I've built
+            Real‑world applications I've built
           </motion.p>
 
           <div className="grid md:grid-cols-2 gap-8">
